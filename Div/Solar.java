@@ -74,7 +74,7 @@ public class Solar extends GLCanvas implements GLEventListener{
 				ringOuter[i][1] = (float) (Math.sin(2 * Math.PI * i / 199 )*(size+size/1.5));
 				ringOuter[i][2] = 0;
 			}
-			gl.glColor4f(col[0]+0.2f,col[1]+0.2f,col[2]+0.2f,0.8f);
+			gl.glColor4f(color[0]+0.2f,color[1]+0.2f,color[2]+0.2f,0.8f);
 			countI=0;
 			countO=0;
 			gl.glPushMatrix();
@@ -109,6 +109,7 @@ public class Solar extends GLCanvas implements GLEventListener{
 		gl.glPopMatrix();
 
 		gl.glPushMatrix();
+		gl.glColor3f(color[0]/2,color[1]/2,color[2]/2);
 		gl.glRotatef(-rotate,0,1,0);
 		gl.glBegin(GL2.GL_LINE_LOOP);
 			for(int i =0; i <= 300; i++){
@@ -132,9 +133,9 @@ public class Solar extends GLCanvas implements GLEventListener{
 		gl.glRotatef(yaw,0,0,1);
 
 		// Pluto
-		col[0] = 0.3f;
-		col[1] = 0.3f;
-		col[2] = 0.3f;
+		col[0] = 0.4f;
+		col[1] = 0.4f;
+		col[2] = 0.4f;
 		newPlanet(drawable,0.1f,col,14f,200f,17f,false);
 		// Neptune
 		col[0] = 0f;
